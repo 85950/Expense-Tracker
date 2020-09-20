@@ -42,6 +42,7 @@ var holdDelete = (function() {
 
         }
     };
-};
+})();
+
 //run
 main()
