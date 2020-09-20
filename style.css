@@ -112,12 +112,17 @@ body{
 }
 #table td{
     background-color: #e4e4e4;
+    text-align: center;
+
 }
 
 #trash{
     width: 30px;
 }
 
+.deleteButton:hover{
+    color: rgb(167, 167, 167);
+}
 .deleteButton{
     color: rgb(11, 182, 11);
     border: 2px solid #e4e4e4;
