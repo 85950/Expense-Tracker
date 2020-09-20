@@ -9,22 +9,33 @@ function main(){
     submitButton.addEventListener('click', addExpense);
 }
 
-function addExpense(){                
-    holdDelete();
-    var x=document.getElementById('table').insertRow(num);
-    var a = x.insertCell(0);
-    var b = x.insertCell(1);
-    var c = x.insertCell(2);
-    var button = document.createElement('button');
-    button.classList.add('deleteButton')
-    var d = x.insertCell(3);
-    d.appendChild(button)
-    a.innerHTML = expenseName.value;
-    b.innerHTML = expenseDate.value;
-    c.innerHTML = expenseAmount.value;
-    button.innerHTML='<i class="fas fa-trash"></i>'
-    button.setAttribute("onclick", "deleteExpense(this)")
-    num++;
+function addExpense(){     
+    if (expenseName.value === ''){
+        alert('No value was input for name.')
+    }           
+    if (expenseAmount.value === ''){
+        alert('No value was input for amount.')
+    }
+    if (expenseDate.value === ''){
+        alert('No value was input for date.')
+    }
+    else{
+        holdDelete();
+        var x=document.getElementById('table').insertRow(num);
+        var a = x.insertCell(0);
+        var b = x.insertCell(1);
+        var c = x.insertCell(2);
+        var button = document.createElement('button');
+        button.classList.add('deleteButton')
+        var d = x.insertCell(3);
+        d.appendChild(button)
+        a.innerHTML = expenseName.value;
+        b.innerHTML = expenseDate.value;
+        c.innerHTML = expenseAmount.value;
+        button.innerHTML='<i class="fas fa-trash"></i>'
+        button.setAttribute("onclick", "deleteExpense(this)")
+        num++;
+    }
 }
 
 function deleteExpense(r){
@@ -43,6 +54,5 @@ var holdDelete = (function() {
         }
     };
 })();
-
 //run
 main()
