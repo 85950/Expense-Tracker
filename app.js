@@ -10,15 +10,17 @@ function main(){
 }
 
 function addExpense(){     
-    if (expenseName.value === ''){
-        alert('No value was input for name.')
+    if (expenseName.value === ''||expenseAmount.value === ''||expenseDate.value === ''){
+        if (expenseName.value === ''){
+            alert('No value was input for Expense Name.')
+        }
+        else if (expenseAmount.value === ''){
+            alert('No value was input for Expense Amount.')
+        }
+        else{
+            alert('No value was input for Expense Date.')
+        }
     }           
-    if (expenseAmount.value === ''){
-        alert('No value was input for amount.')
-    }
-    if (expenseDate.value === ''){
-        alert('No value was input for date.')
-    }
     else{
         holdDelete();
         var x=document.getElementById('table').insertRow(num);
