@@ -33,7 +33,7 @@ function addExpense(){
         d.appendChild(button)
         a.innerHTML = expenseName.value;
         b.innerHTML = expenseDate.value;
-        c.innerHTML = expenseAmount.value;
+        c.innerHTML = '$' + expenseAmount.value;
         button.innerHTML='<i class="fas fa-trash"></i>'
         button.setAttribute("onclick", "deleteExpense(this)")
         num++;
@@ -52,7 +52,6 @@ var holdDelete = (function() {
         if (!executed) {
             executed = true;
             document.getElementById("hold").remove();
-
         }
     };
 })();
